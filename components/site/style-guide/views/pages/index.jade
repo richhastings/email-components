@@ -1,8 +1,9 @@
 extend ../style-guide
 
 block content
+  .prose
+    section.style-guide-section(id='grid')
+      include ../components/email-grid
 
-  h1 Style Guide
-
-  .style-guide-nav
-    include ../includes/style-guide-nav
+    section.style-guide-section(id='header')
+      include ../components/email-header

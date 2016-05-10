@@ -3,49 +3,30 @@
 // ===========
 //
 
-
-.style-guide-content
-  margin 20px
-
 .style-guide-nav
-  //
+  background $color--white
+  font-family $base--font-heading
 
-.style-guide-nav__root
-  display none
-
-.style-guide-nav--fixed
-  position absolute
-  top 0
-  right 0
-  z-index 1000
-
-  &:before
-    content '\2630'
-    display block
-    position absolute
-    top 0
-    right 0
-    background-color $color--black
-    color $color--white
-    padding 5px 10px
-
-  nav
-    display none
-    background-color $color--black
-    padding 40px 10px 10px
-
-  strong
   a
-    color $color--white
-    &:hover
-      color $color--white
-      text-decoration underline
-
-  p
-    display none
-
-  &:hover nav
     display block
+    padding $base--spacing
+    border-bottom 1px solid $color--grey
 
-  .style-guide-nav__root
-    display block
+.style-guide-section
+  padding $base--spacing
+  background $color--white
+  border-bottom 1px solid $color--grey
+
+  +width-min($mq--desktop)
+    padding ($base--spacing * 2)
+
+  & + &
+    margin-top rem(20)
+
+.example
+  display block
+  margin 0 (-($base--spacing) * 2) $base--spacing
+  background $color--grey
+
+  +width-min($mq--desktop)
+    margin 0 (-($base--spacing) * 2) ($base--spacing * 2)

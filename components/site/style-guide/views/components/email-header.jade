@@ -1,0 +1,14 @@
+include ../../../static-routes/views/mixins/email-wrapper
+
+h2(id='header') Header
+p Usually found above content and below pre-header
+
+h3 Full width logo
+.example
+  +email-wrapper()
+    include ../../../static-routes/views/components/email-header
+
+h3 Logo center
+.example
+  +email-wrapper()
+    include ../../../static-routes/views/components/email-header

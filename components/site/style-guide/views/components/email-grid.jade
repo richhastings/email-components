@@ -1,0 +1,47 @@
+include ../../../static-routes/views/mixins/email-wrapper
+
+header.style-guide-section__header
+  h2 Grid
+  p The grid layout adapts to the amount of items within
+
+-
+  var data = {
+    'content': [
+        {'imageUrl':'http://placehold.it/280x280'}
+      , {'imageUrl':'http://placehold.it/280x280'}
+    ]
+  }
+
+h3 Two columns
+.example
+  +email-wrapper()
+    include ../../../static-routes/views/components/email-grid
+
+-
+  data = {
+    'content': [
+        {'imageUrl':'http://placehold.it/280x280'}
+      , {'imageUrl':'http://placehold.it/280x280'}
+      , {'imageUrl':'http://placehold.it/280x280'}
+    ]
+  }
+
+h3 Three columns
+.example
+  +email-wrapper()
+    include ../../../static-routes/views/components/email-grid
+
+-
+  data = {
+    'content': [
+        {'imageUrl':'http://placehold.it/280x280'}
+      , {'imageUrl':'http://placehold.it/280x280'}
+      , {'imageUrl':'http://placehold.it/280x280'}
+      , {'imageUrl':'http://placehold.it/280x280'}
+    ]
+  }
+
+h3 Four columns
+.example
+  +email-wrapper()
+    include ../../../static-routes/views/components/email-grid
