@@ -1,12 +1,10 @@
-mixin email-grid(data, numberOfColumns)
-
-  - var columnClass
+- var columnClass
 
   if numberOfColumns
     - columnClass = numberOfColumns
   else
     - columnClass = (data.content.length < 4) ? data.content.length : (data.content.length === 4 ? 2 : 3)
-    
+
   -
     if (columnClass === 1) columnClass = 'one-col'
     else if (columnClass === 2) columnClass = 'two-col'
@@ -23,20 +21,24 @@ mixin email-grid(data, numberOfColumns)
         <![endif]-->
 
       each item, i in data.content
-        
+
         .email-grid__item
           table(width='100%')
             tr
-              td.inner
+              td
                 table.contents
                   if item.imageUrl
                     tr
                       td
                         img(src=item.imageUrl, width='280', alt='')
+                    if item.imageCaption
+                      tr
+                        td.image-credit
+                          p= item.imageCaption
                   if item.textContent
                     tr
                       td.text= item.textContent
-            
+
         if i !== data.content.length-1
           <!--[if (gte mso 9)|(IE)>
           </td><td width=cellWidth valign='top'>

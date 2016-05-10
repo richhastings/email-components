@@ -8,7 +8,7 @@ function createController (serviceLocator) {
 
   serviceLocator.router.get('/style-guide*', function (req, res) {
     var url = req.url.replace(/\/style-guide[\/]*/, '')
-      // , title = slugToTitle(url)
+      , title
       , templatePath = __dirname + '/../views/pages/' + (url !== '' ? url : 'index') + '.jade'
       , template = compileJade(templatePath)
       , formattedUrls = urlFormatter(req)
