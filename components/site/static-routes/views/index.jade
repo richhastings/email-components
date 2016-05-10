@@ -1,7 +1,15 @@
 extend /email
 
 block content
-  - var data = {'content': [{'imageUrl':'http://placehold.it/280x280'}, {'imageUrl':'http://placehold.it/280x280'}, {'imageUrl':'http://placehold.it/280x280'}, {'imageUrl':'http://placehold.it/280x280'}]}
+  -
+    var data = {
+      'content': [
+          {'imageUrl':'http://placehold.it/280x280'}
+        , {'imageUrl':'http://placehold.it/280x280'}
+        , {'imageUrl':'http://placehold.it/280x280'}
+        , {'imageUrl':'http://placehold.it/280x280'}
+      ]
+    }
 
   include components/email-header
   include components/email-grid
