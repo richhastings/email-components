@@ -30,7 +30,7 @@
                   if item.imageUrl
                     tr
                       td
-                        img(src=item.imageUrl, width='280', alt='')
+                        img(src=item.imageUrl, width='300', alt='')
                     if item.imageCaption
                       tr
                         td.image-credit
@@ -38,6 +38,9 @@
                   if item.textContent
                     tr
                       td.text= item.textContent
+        
+        if i !== data.content.length-1
+          .email-grid__spacer
 
         if i !== data.content.length-1
           <!--[if (gte mso 9)|(IE)>

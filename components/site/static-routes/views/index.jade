@@ -4,12 +4,25 @@ block content
   -
     var data = {
       'content': [
-          {'imageUrl':'http://placehold.it/280x280'}
-        , {'imageUrl':'http://placehold.it/280x280'}
-        , {'imageUrl':'http://placehold.it/280x280'}
-        , {'imageUrl':'http://placehold.it/280x280'}
+          {'imageUrl':'http://placehold.it/300x300'}
+        , {'imageUrl':'http://placehold.it/300x300'}
+        // , {'imageUrl':'http://placehold.it/280x280'}
+        // , {'imageUrl':'http://placehold.it/280x280'}
       ]
     }
 
   include components/email-header
+  include components/email-grid
+
+  -
+    data = {
+      'content': [
+          {'imageUrl':'http://placehold.it/300x300'}
+        , {'imageUrl':'http://placehold.it/300x300'}
+        , {'imageUrl':'http://placehold.it/280x280'}
+        // , {'imageUrl':'http://placehold.it/280x280'}
+      ]
+    }
+
+
   include components/email-grid

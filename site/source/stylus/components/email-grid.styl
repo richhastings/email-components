@@ -2,14 +2,9 @@
   text-align center
   font-size 0
 
-  img
-    height auto
-
-    .email-grid--two-col &
-      max-width 280px
-
-    .email-grid--three-col &
-      max-width 180px
+.email-grid__spacer
+  width $email-gutter
+  display inline-block
 
 .email-grid__item
   width 100%
@@ -17,16 +12,26 @@
   vertical-align top
 
   .email-grid--two-col &
-    max-width 300px
+    max-width ($email-width/2) - ($email-gutter/2)
     +width-max(400px)
       max-width 100% !important
 
   .email-grid--three-col &
-    max-width 200px
-    +width-min(401px)
-      max-width 33% !important
+    max-width ($email-width/3) - ((2*$email-gutter)/3)
+    // +width-min(401px)
+    //   max-width 33% !important
     +width-max(400px)
       max-width 100% !important
+
+  img
+    height auto
+    width 100%
+
+    // .email-grid--two-col &
+      // max-width 280px
+
+    // .email-grid--three-col &
+      // max-width 180px
 
 .contents
   text-align center
