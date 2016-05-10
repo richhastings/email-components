@@ -1,0 +1,19 @@
+extend ../style-guide
+
+mixin exampleAdvert(advert)
+
+  h2 #{advert.name} (#{advert.width}x#{advert.height})
+  p
+    img(src='http://img.clock.co.uk/#{advert.width}x#{advert.height}', alt='Example #{advert.name} Advert (#{advert.width}x#{advert.height})')
+
+
+block content
+
+  h1 Advertising
+
+  p Google Adsense provides a good overview of other 
+    a(href='https://support.google.com/adsense/answer/6002621?hl=en-GB') common advert sizes
+    | .
+
+  each advert in adverts
+    +exampleAdvert(advert)

@@ -1,0 +1,48 @@
+mixin email-grid(data, numberOfColumns)
+
+  - var columnClass
+
+  if numberOfColumns
+    - columnClass = numberOfColumns
+  else
+    - columnClass = (data.content.length < 4) ? data.content.length : (data.content.length === 4 ? 2 : 3)
+    
+  -
+    if (columnClass === 1) columnClass = 'one-col'
+    else if (columnClass === 2) columnClass = 'two-col'
+    else if (columnClass === 3) columnClass = 'three-col'
+    else if (columnClass === 4) columnClass = 'three-col'
+
+  tr
+    td(class='email-grid email-grid--'+columnClass)
+
+      if data.content.length > 1
+        - var cellWidth = 100% 
+        <!--[if (gte mso 9)|(IE)>
+        <table width='100%' align='center'><tr><td width=cellWidth valign='top'>
+        <![endif]-->
+
+      each item, i in data.content
+        
+        .email-grid__item
+          table(width='100%')
+            tr
+              td.inner
+                table.contents
+                  if item.imageUrl
+                    tr
+                      td
+                        img(src=item.imageUrl, width='280', alt='')
+                  if item.textContent
+                    tr
+                      td.text= item.textContent
+            
+        if i !== data.content.length-1
+          <!--[if (gte mso 9)|(IE)>
+          </td><td width=cellWidth valign='top'>
+          <![endif]-->
+
+      if data.content.length > 1
+        <!--[if (gte mso 9)|(IE)>
+        </td></tr></table>
+        <![endif]-->

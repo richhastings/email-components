@@ -1,0 +1,13 @@
+[ { "quote": "Proin quis tortor orci. Etiam at risus et justo dignissim congue."
+  , "position": "center"
+  , "citation": "Firstname Lastname"
+  }
+, { "quote": "Proin quis tortor orci. Etiam at risus et justo dignissim congue."
+  , "position": "left"
+  }
+, { "quote": "Proin quis tortor orci. Etiam at risus et justo dignissim congue."
+  , "position": "right"
+  , "citation": "Firstname Lastname"
+  , "citationLink": "http://google.com"
+  }
+]

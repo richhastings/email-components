@@ -1,0 +1,96 @@
+[ { "provider": "youtube"
+  , "videoId": "zZJ7cq6T3v4"
+  , "width": "full"
+  , "position": "center"
+  }
+, { "provider": "youtube"
+  , "videoId": "TkyLnWm1iCs"
+  , "width": "medium"
+  , "position": "center"
+  }
+, { "provider": "youtube"
+  , "videoId": "8ktMe0xclxA"
+  , "width": "small"
+  , "position": "center"
+  }
+
+, { "provider": "youtube"
+  , "videoId": "PJlmYh27MHg"
+  , "width": "full"
+  , "position": "left"
+  }
+, { "provider": "youtube"
+  , "videoId": "8NaBHCuxqhA"
+  , "width": "medium"
+  , "position": "left"
+  }
+, { "provider": "youtube"
+  , "videoId": "cVA4BO2v7zs"
+  , "width": "small"
+  , "position": "left"
+  }
+
+, { "provider": "youtube"
+  , "videoId": "ZQaBYT4MxWU"
+  , "width": "full"
+  , "position": "right"
+  }
+, { "provider": "youtube"
+  , "videoId": "wSPAPeO17Zk"
+  , "width": "medium"
+  , "position": "right"
+  }
+, { "provider": "youtube"
+  , "videoId": "YBQLEhzlYX8"
+  , "width": "small"
+  , "position": "right"
+  }
+
+, { "provider": "vimeo"
+  , "videoId": "99275308"
+  , "width": "full"
+  , "position": "center"
+  }
+, { "provider": "vimeo"
+  , "videoId": "5137183"
+  , "width": "medium"
+  , "position": "center"
+  }
+, { "provider": "vimeo"
+  , "videoId": "80162468"
+  , "width": "small"
+  , "position": "center"
+  }
+
+, { "provider": "vimeo"
+  , "videoId": "1789964"
+  , "width": "full"
+  , "position": "left"
+  }
+, { "provider": "vimeo"
+  , "videoId": "14104368"
+  , "width": "medium"
+  , "position": "left"
+  }
+, { "provider": "vimeo"
+  , "videoId": "1831024"
+  , "width": "small"
+  , "position": "left"
+  }
+
+, { "provider": "vimeo"
+  , "videoId": "95943611"
+  , "width": "full"
+  , "position": "right"
+  }
+, { "provider": "vimeo"
+  , "videoId": "16975683"
+  , "width": "medium"
+  , "position": "right"
+  }
+, { "provider": "vimeo"
+  , "videoId": "3156959"
+  , "width": "small"
+  , "position": "right"
+  }
+]

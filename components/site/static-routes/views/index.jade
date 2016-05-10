@@ -1,0 +1,20 @@
+extend /email
+
+include components/email-mixins/email-header
+include components/email-mixins/email-grid
+
+block content
+  
+  - var data1 = {'content':[{'imageUrl':'http://placehold.it/280x100'}]}
+  - var data2 = {'content': [{'imageUrl':'http://placehold.it/280x280'}, {'imageUrl':'http://placehold.it/280x280'}]}
+  - var data3 = {'content': [{'imageUrl':'http://placehold.it/280x280'}, {'imageUrl':'http://placehold.it/280x280'}, {'imageUrl':'http://placehold.it/280x280'}]}
+  - var data4 = {'content': [{'imageUrl':'http://placehold.it/280x280'}, {'imageUrl':'http://placehold.it/280x280'}, {'imageUrl':'http://placehold.it/280x280'}, {'imageUrl':'http://placehold.it/280x280'}]}
+  - var data5 = {'content': [{'textContent':'lorem'}, {'textContent':'lorem'}, {'textContent':'lorem'}, {'textContent':'lorem'}, {'textContent':'lorem'}]}
+  
+  +email-header
+    img(src='http://placehold.it/600x100', width='600', alt='')
+  +email-grid(data1)
+  +email-grid(data2)
+  +email-grid(data3)
+  +email-grid(data4)
+  +email-grid(data5)

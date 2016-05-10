@@ -1,0 +1,3 @@
+[ { "html": "<h1><marquee>I’m custom HTML!</marquee></h1>" }
+, { "html": "<p><button style=\"padding:10px;font-size:1em;\" onclick=\"alert('I’m inline JS :(');\">I’m custom HTML too!</button></p>" }
+]

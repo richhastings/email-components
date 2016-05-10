@@ -1,0 +1,17 @@
+extend /default
+
+//- Reset default blocks
+block a11y-navigation
+block pre-header
+block main-header
+block main-navigation
+block main-footer
+
+append body-start
+
+  .style-guide-nav.style-guide-nav--fixed
+    include includes/style-guide-nav
+
+block content-wrapper
+  .style-guide-content
+    block content

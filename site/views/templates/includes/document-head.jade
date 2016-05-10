@@ -1,0 +1,133 @@
+//-
+//- DOCUMENT HEAD
+//- =============
+//-
+
+
+//-
+//- STANDARD META TAGS
+//-
+
+meta(charset='utf-8')
+meta(name='viewport', content='initial-scale=1')
+
+block meta-creator
+  if meta.creator || config.meta.creator
+    meta(name='creator', content=meta.creator || config.meta.creator)
+
+block meta-publisher
+  if meta.publisher || config.meta.publisher
+    meta(name='publisher', content=meta.publisher || config.meta.publisher)
+
+block meta-author
+  if meta.author || config.meta.author
+    meta(name='author', content=meta.author || config.meta.author)
+
+block meta-description
+  if meta.description
+    meta(name='description', content=meta.description)
+
+//- block canonical
+  link(rel='canonical', href=formattedUrls.canonicalUrl)
+
+
+//-
+//- PAGE TITLE
+//-
+
+//- block title
+  if (formattedUrls.slugUrl === '/' || !meta.title) && config.meta.strapline
+    title #{config.meta.title} – #{config.meta.strapline}
+  else if meta.title
+    title #{meta.title} | #{config.meta.title}
+  else
+    title= config.meta.title
+
+
+//-
+//- CSS
+//- Conditional comments to load a completely separate file for IE8
+//-
+
+<!--[if gt IE 8]><!-->
+link(rel='stylesheet', href=versionPath('/assets/css/index.css'))
+<!--<![endif]-->
+<!--[if lte IE 8]>
+link(rel='stylesheet', href=versionPath('/assets/css/index-ie8.css'))
+<![endif]-->
+
+
+//-
+//- JAVASCRIPT - HEAD SPECIFIC
+//-
+
+block headScripts
+  script
+    include ../../../assets/js/build/modernizr.js
+  <!--[if lte IE 8]>
+  script(src=versionPath('/assets/js/lib/vendor/html5shiv.js'))
+  <![endif]-->
+
+
+//-
+//- ICONS / IMAGES / DEVICE SPECIFICS
+//-
+
+link(rel='shortcut icon', href=versionPath('/assets/img/meta/favicon.ico'))
+
+
+//-
+//- Theme Color (Android theme, Safari 9 pinned icons)
+//-
+
+meta(name='theme-color', content=config.meta.themeColor)
+
+
+//-
+//- iOS App Icons / Title
+//-
+
+meta(name='apple-mobile-web-app-title', content=config.meta.iosTitle)
+link(rel='apple-touch-icon-precomposed', sizes='76x76',   href=versionPath('/assets/img/meta/apple-touch-icon-precomposed-76x76.png'))
+link(rel='apple-touch-icon-precomposed', sizes='120x120', href=versionPath('/assets/img/meta/apple-touch-icon-precomposed-120x120.png'))
+link(rel='apple-touch-icon-precomposed', sizes='152x152', href=versionPath('/assets/img/meta/apple-touch-icon-precomposed-152x152.png'))
+link(rel='apple-touch-icon-precomposed', sizes='180x180', href=versionPath('/assets/img/meta/apple-touch-icon-precomposed-180x180.png'))
+
+
+//-
+//- Microsoft Pinned Tile
+//-
+
+meta(name='application-name', content=config.meta.msTitle)
+meta(name='msapplication-TileImage', content=versionPath('/assets/img/meta/microsoft-pinned-tile-image-144x144.png'))
+meta(name='msapplication-TileColor', content=config.meta.msTileColor)
+
+
+//-
+//- Webmaster Tools
+//-
+
+if config.meta.googleSiteVerification
+  meta(name='google-site-verification', content=config.meta.googleSiteVerification)
+
+if config.meta.bingSiteVerification
+  meta(name='msvalidate.01', content=config.meta.bingSiteVerification)
+
+
+//-
+//- Open Graph / Twitter Cards
+//-
+
+block open-graph
+  if share && share.title && share.description
+    meta(property='og:title', content=share.title)
+    meta(property='og:description', content=share.description)
+    meta(property='og:type', content=share.ogType || 'website')
+    meta(property='og:image', content=share.image || config.url + versionPath('/assets/img/meta/meta-icon-1000x1000.jpg'))
+    meta(property='og:site_name', content=config.meta.title)
+    meta(property='og:url', content=formattedUrls.initialUrl)
+
+block twitter-card
+  if share && config.meta.ogTwitterUser
+    meta(name='twitter:site', content=config.meta.ogTwitterUser)
+    meta(name='twitter:card', content=share.twitterCardType || 'summary')

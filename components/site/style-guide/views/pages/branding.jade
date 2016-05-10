@@ -1,0 +1,120 @@
+extend ../style-guide
+
+mixin swatch(color)
+  //- stylperjade whitelist: swatch--*
+  .swatch(class='swatch--#{color.class}')
+    .swatch__caption
+      .swatch__title #{color.name}
+      ul.swatch__list.list--unstyled
+        li.swatch__value.swatch__value--hex Hex: 
+        li.swatch__value.swatch__value--rgb RGB: 
+
+block content
+
+  h1 Branding
+
+  h2 Colours
+
+  .grid
+    each color in colors
+      .grid__item.one-half.desktop-one-quarter
+        +swatch(color)
+
+  hr
+
+  h2 Meta Icons
+
+  h3 Favicon
+
+  .grid
+    .grid__item.tablet-one-third.desktop-one-quarter
+      .meta-icon
+        .meta-icon__title Favicon
+        p Multiple sizes (ICO example)
+        .meta-icon--favicon
+          img(src=versionPath('/assets/img/meta/favicon.ico'), alt='favicon')
+    .grid__item.tablet-one-third.desktop-one-quarter
+      .meta-icon
+        .meta-icon__title Favicon
+        p 16px (PNG Example)
+        .meta-icon--favicon
+          img(src=versionPath('/assets/img/meta/favicon-16.png'), width='16', height='16', alt='favicon')
+    .grid__item.tablet-one-third.desktop-one-quarter
+      .meta-icon
+        .meta-icon__title Retina Favicon
+        p 32px (PNG Example)
+        .meta-icon--favicon.meta-icon--retina
+          img(src=versionPath('/assets/img/meta/favicon-32.png'), width='16', height='16', alt='favicon')
+
+  h3 iOS
+
+  .grid
+    .grid__item.tablet-one-third.desktop-one-quarter
+      .meta-icon
+        .meta-icon__title iPhone
+        p 120px – Retina
+        .meta-icon--ios.meta-icon--retina.js-meta-icon--ios
+          img(src=versionPath('/assets/img/meta/apple-touch-icon-precomposed-120x120.png'), width='60', height='60', alt='iPhone (Retina) - iOS7+')
+          .meta-icon__text …
+    .grid__item.tablet-one-third.desktop-one-quarter
+      .meta-icon
+        .meta-icon__title iPhone
+        p 180px – Retina HD
+        .meta-icon--ios.meta-icon--retina-hd.js-meta-icon--ios
+          img(src=versionPath('/assets/img/meta/apple-touch-icon-precomposed-180x180.png'), width='60', height='60', alt='iPad (Retina) - iOS7+')
+          .meta-icon__text …
+    .grid__item.tablet-one-third.desktop-one-quarter
+      .meta-icon
+        .meta-icon__title iPad
+        p 76px
+        .meta-icon--ios.js-meta-icon--ios
+          img(src=versionPath('/assets/img/meta/apple-touch-icon-precomposed-76x76.png'), width='76', height='76', alt='iPad - iOS7+')
+          .meta-icon__text …
+    .grid__item.tablet-one-third.desktop-one-quarter
+      .meta-icon
+        .meta-icon__title iPad
+        p 152px – Retina
+        .meta-icon--ios.meta-icon--retina.js-meta-icon--ios
+          img(src=versionPath('/assets/img/meta/apple-touch-icon-precomposed-152x152.png'), width='76', height='76', alt='iPad (Retina) - iOS7+')
+          .meta-icon__text …
+
+  h3 Windows
+
+  .grid
+    .grid__item.tablet-one-third.desktop-one-quarter
+      .meta-icon
+        .meta-icon__title Windows Pinned Tile
+        p 144px – HiDPI
+        .meta-icon--ms-tile.js-meta-icon--ms-tile
+          img(src=versionPath('/assets/img/meta/microsoft-pinned-tile-image-144x144.png'), width='64', height='64', alt='Windows Pinned Tile')
+          .meta-icon__text …
+
+  script.
+
+    var msTileColor = document.querySelector('meta[name="msapplication-TileColor"]').getAttribute('content')
+      , msAppName = document.querySelector('meta[name="application-name"]').getAttribute('content')
+      , iosWebAppTitle = document.querySelector('meta[name="apple-mobile-web-app-title"]').getAttribute('content').substr(0, 12)
+      , contrastYIQ = getContrastYIQ(msTileColor.replace('#', ''))
+      , staticMsTile = document.querySelector('.js-meta-icon--ms-tile')
+      , staticIosIcon = document.querySelectorAll('.js-meta-icon--ios')
+
+    staticMsTile.style.backgroundColor = msTileColor
+    staticMsTile.querySelector('.meta-icon__text').innerHTML = msAppName
+
+    if (staticMsTile.classList) {
+      staticMsTile.classList.add(contrastYIQ)
+    } else {
+      staticMsTile.className += ' ' + contrastYIQ
+    }
+
+    for ( var i = 0; i < staticIosIcon.length; i++ ) {
+      staticIosIcon[i].querySelector('.meta-icon__text').innerHTML = iosWebAppTitle
+    }
+
+    function getContrastYIQ(hexcolor) {
+      var r = parseInt(hexcolor.substr(0,2),16)
+        , g = parseInt(hexcolor.substr(2,2),16)
+        , b = parseInt(hexcolor.substr(4,2),16)
+        , yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000
+      return (yiq >= 128) ? 'is-light' : 'is-dark'
+    }

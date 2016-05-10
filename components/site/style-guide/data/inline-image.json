@@ -1,0 +1,63 @@
+[ { "imageUrl": "http://img.clock.co.uk/1600x900"
+  , "title": "Lorem Ipsum"
+  , "width": "full"
+  , "position": "center"
+  , "caption": "Here is an image caption"
+  }
+, { "imageUrl": "http://img.clock.co.uk/1600x900"
+  , "title": "Lorem Ipsum"
+  , "width": "medium"
+  , "position": "center"
+  , "caption": "Here is an image caption"
+  }
+, { "imageUrl": "http://img.clock.co.uk/1600x900"
+  , "title": "Lorem Ipsum"
+  , "width": "small"
+  , "position": "center"
+  , "caption": "Here is an image caption"
+  }
+
+, { "imageUrl": "http://img.clock.co.uk/1600x900"
+  , "title": "Lorem Ipsum"
+  , "width": "full"
+  , "position": "left"
+  , "caption": "Here is an image caption. Image also has an external link"
+  , "link": "http://google.com"
+  , "externalLink": true
+  }
+, { "imageUrl": "http://img.clock.co.uk/1600x900"
+  , "title": "Lorem Ipsum"
+  , "width": "medium"
+  , "position": "left"
+  , "caption": "Here is an image caption. Image also has a link"
+  , "link": "http://google.com"
+  }
+, { "imageUrl": "http://img.clock.co.uk/1600x900"
+  , "title": "Lorem Ipsum"
+  , "width": "small"
+  , "position": "left"
+  , "caption": "Here is an image caption. Image also has an external link"
+  , "link": "http://google.com"
+  , "externalLink": true
+  }
+
+, { "imageUrl": "http://img.clock.co.uk/1600x900"
+  , "title": "Lorem Ipsum"
+  , "width": "full"
+  , "position": "right"
+  , "link": "http://google.com"
+  }
+, { "imageUrl": "http://img.clock.co.uk/1600x900"
+  , "title": "Lorem Ipsum"
+  , "width": "medium"
+  , "position": "right"
+  , "link": "http://google.com"
+  , "externalLink": true
+  }
+, { "imageUrl": "http://img.clock.co.uk/1600x900"
+  , "title": "Lorem Ipsum"
+  , "width": "small"
+  , "position": "right"
+  , "link": "http://google.com"
+  }
+]

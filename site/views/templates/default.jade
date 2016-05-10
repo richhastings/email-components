@@ -1,0 +1,39 @@
+doctype
+html.no-js(lang='en')
+  head
+    include includes/document-head
+
+  body(class=bodyClass || null)
+
+    //- Ensure correct config are set for ALL environments before uncommenting.
+    //- include includes/analytics
+
+    block body-start
+
+    block a11y-navigation
+      include layout/a11y-navigation
+
+    block pre-header
+      include layout/pre-header
+
+    block main-header
+      include layout/main-header
+
+    block main-navigation
+      include layout/main-navigation
+
+    block content-wrapper
+      main.main-content(id='content', role='main')
+        .content-center.content-gutter
+          block content
+
+    block main-footer
+      include layout/main-footer
+
+    block body-end
+
+    block scripts
+      script(src=versionPath('/assets/js/build/index.js'), async, defer)
+      if enableBrowserSync
+        script#__bs_script__.
+          document.write('<script async src="//HOST:PORT/browser-sync/browser-sync-client.js"><\/script>'.replace(/HOST/g, location.hostname).replace(/PORT/g, #{config.browserSyncPort}))

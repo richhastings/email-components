@@ -1,0 +1,90 @@
+//
+// EMAIL COMPONENTS
+// =================
+
+//
+// BASE STYLES
+// Optional description
+//
+
+body
+  margin 0 !important
+  padding 0
+
+table
+  border-spacing 0
+
+td
+  padding 0
+
+img
+  border 0
+
+/////////////////////
+
+.wrapper
+  width 100%
+  table-layout fixed
+  -webkit-text-size-adjust 100%
+  -ms-text-size-adjust 100%
+
+.webkit
+  max-width 600px
+  margin 0 auto
+
+.outer
+  margin 0 auto
+  width 100%
+  max-width 600px
+
+/////////////////////
+.email-header
+  img
+    width 100%
+    max-width 600px
+    height auto
+
+/////////////////////
+.email-grid
+  text-align center
+  font-size 0
+
+  img
+    height auto
+
+    .email-grid--two-col &
+      max-width 280px
+
+    .email-grid--three-col &
+      max-width 180px
+
+.email-grid__item
+  width 100%
+  display inline-block
+  vertical-align top
+
+  .email-grid--two-col &
+    max-width 300px
+
+  .email-grid--three-col &
+    max-width 200px
+
+.contents
+  text-align center
+  width 100%
+  font-size 14px
+
+.email-grid--two-col
+  .email-grid__item
+    +width-max(400px)
+      max-width 100% !important
+
+.email-grid--three-col
+  .email-grid__item
+    +width-min(401px)
+      max-width 33% !important
+    +width-max(400px)
+      max-width 100% !important
+
+div[style*="margin: 16px 0"]
+  margin 0 !important

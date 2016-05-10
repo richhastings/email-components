@@ -1,0 +1,70 @@
+{
+  "global": {
+    "title": "email-testing",
+    "platform": "email-testing",
+    "description": "testing emails",
+    "client": "clock",
+    "url": "http://localhost.clockhosting.com:7666",
+    "hostname": "localhost.clockhosting.com",
+    "domain": "localhost.clockhosting.com",
+    "port": 7666,
+    "statsd": {
+      "host": "graphite.clockhosting.com",
+      "port": "8125"
+    },
+    "allowCrawlers": false,
+    "mailAuth": {
+      "user": "postmaster@clock.mailgun.org",
+      "pass": "cat feet"
+    },
+    "numProcesses": 1,
+    "meta": {
+      "title": "email-testing",
+      "strapline": "",
+      "description": null,
+      "creator": "Clock – http://www.clock.co.uk",
+      "publisher": null,
+      "author": null,
+      "iosTitle": "email-testing",
+      "msTitle": "email-testing",
+      "msTileColor": "#0095da",
+      "themeColor": "#0095da",
+      "ogTwitterUser": "@clock",
+      "googleSiteVerification": null,
+      "bingSiteVerification": null
+    },
+    "gaTrackingId": "UA-XXXXXXXX-1",
+    "browserSyncPort": 7665,
+    "locale": {
+      "longDateFormat": {
+        "LT": "HH:mm",
+        "LTS": "HH:mm:ss",
+        "L": "D MMM YYYY",
+        "LL": "D MMMM YYYY",
+        "LLL": "D MMMM YYYY LT",
+        "LLLL": "dddd D MMMM YYYY LT"
+      },
+      "calendar": {
+        "lastDay": "[Yesterday at] LT",
+        "sameDay": "[Today at] LT",
+        "nextDay": "[Tomorrow at] LT",
+        "lastWeek": "[Last] dddd [at] LT",
+        "nextWeek": "dddd [at] LT",
+        "sameElse": "LLLL"
+      }
+    },
+    "timezone": "Europe/London",
+    "formats": {
+      "timezone": "LLLL z",
+      "iso": "YYYY-MM-DDTHH:mm:ss[Z]",
+      "isoFileSystem": "YYYYMMDDTHHmmss[Z]"
+    }
+  },
+  "staging": {
+    "numProcesses": 3
+  },
+  "production": {
+    "numProcesses": 4,
+    "allowCrawlers": true
+  }
+}

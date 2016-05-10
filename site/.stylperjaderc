@@ -1,0 +1,53 @@
+{ "ignoreFiles": []
+
+, "cssWhitelist":
+  /* Modernizr classes */
+  [ "js"
+  , "svg"
+
+  /* State classes */
+  , "is-*"
+  , "has-*"
+
+  /* Grid classes where related widths are used */
+  , "*-third"
+  , "*-thirds"
+  , "*-quarter"
+  , "*-quarters"
+
+  /* Generated Modifiers */
+  , "field--success"
+  , "field--notice"
+  , "field--warning"
+  , "field--error"
+
+  /* Base BEM blocks used as templates */
+  , "icon"
+
+  /* Project specific classes */
+
+  ]
+
+, "jadeWhitelist":
+  /* js-* classes ONLY allowed in Jade */
+  [ "js-*"
+
+  /* Base BEM blocks used as templates */
+  , "control"
+  , "font-sample"
+  , "size-grid"
+  , "style-guide-nav"
+
+  /* Project specific classes */
+  , "field__answer"
+  ]
+
+, "cssBlacklist":
+  /* js-* classes NOT allowed in CSS */
+  [ "js-*"
+  ]
+
+, "jadeBlacklist":
+  [
+  ]
+}
