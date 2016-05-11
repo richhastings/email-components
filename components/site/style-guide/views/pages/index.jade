@@ -2,8 +2,23 @@ extend ../style-guide
 
 block content
   .prose
-    section.style-guide-section(id='grid')
-      include ../components/email-grid
+    section.style-guide-section(id='pre-header')
+      include ../components/email-pre-header
 
     section.style-guide-section(id='header')
       include ../components/email-header
+
+    section.style-guide-section(id='navigation')
+      include ../components/email-navigation
+
+    section.style-guide-section(id='hero')
+      //- include ../components/email-hero
+
+    section.style-guide-section(id='grid')
+      include ../components/email-grid
+
+    section.style-guide-section(id='listicle')
+      //- include ../components/email-listicle
+
+    section.style-guide-section(id='spacer')
+      include ../components/email-spacer

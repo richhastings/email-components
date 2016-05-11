@@ -16,9 +16,11 @@
 // Ensures content doesn't touch browser edges on smaller screens
 
 .content-gutter
-  padding $content--gutter--mobile
+  padding-left $content--gutter--mobile
+  padding-right $content--gutter--mobile
 
 +width-min($mq--tablet)
 
   .content-gutter
-    padding $content--gutter
+    padding-left $content--gutter
+    padding-right $content--gutter

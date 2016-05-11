@@ -1,47 +1,62 @@
 include ../../../static-routes/views/mixins/email-wrapper
 
-header.style-guide-section__header
-  h2 Grid
-  p The grid layout adapts to the amount of items within
-
+h2 Grid
+p Use to display items within a grid.
 -
   var data = {
     'content': [
-        {'imageUrl':'http://placehold.it/280x280'}
-      , {'imageUrl':'http://placehold.it/280x280'}
+        {'imageUrl':'http://img.clock.co.uk/300x200.jpg?color=0095da&textColor=0095da'}
+      , {'imageUrl':'http://img.clock.co.uk/300x200.jpg?color=0095da&textColor=0095da'}
     ]
   }
-
-h3 Two columns
 .example
   +email-wrapper()
     include ../../../static-routes/views/components/email-grid
 
+p The grid can have up to three items in a row:
 -
-  data = {
+  var data = {
     'content': [
-        {'imageUrl':'http://placehold.it/280x280'}
-      , {'imageUrl':'http://placehold.it/280x280'}
-      , {'imageUrl':'http://placehold.it/280x280'}
+        {'imageUrl':'http://img.clock.co.uk/300x300?color=0095da&textColor=0095da'}
+      , {'imageUrl':'http://img.clock.co.uk/300x300?color=0095da&textColor=0095da'}
+      , {'imageUrl':'http://img.clock.co.uk/300x300?color=0095da&textColor=0095da'}
     ]
   }
-
-h3 Three columns
 .example
   +email-wrapper()
     include ../../../static-routes/views/components/email-grid
 
+p If there are an even number of items, the grid will display two per row:
 -
-  data = {
+  var data = {
     'content': [
-        {'imageUrl':'http://placehold.it/280x280'}
-      , {'imageUrl':'http://placehold.it/280x280'}
-      , {'imageUrl':'http://placehold.it/280x280'}
-      , {'imageUrl':'http://placehold.it/280x280'}
+        {'imageUrl':'http://img.clock.co.uk/300x200?color=0095da&textColor=0095da'}
+      , {'imageUrl':'http://img.clock.co.uk/300x200?color=0095da&textColor=0095da'}
+      , {'imageUrl':'http://img.clock.co.uk/300x200?color=0095da&textColor=0095da'}
+      , {'imageUrl':'http://img.clock.co.uk/300x200?color=0095da&textColor=0095da'}
     ]
   }
-
-h3 Four columns
 .example
   +email-wrapper()
     include ../../../static-routes/views/components/email-grid
+
+p And if there are an odd number of items greater than three, the grid will wrap:
+-
+  var data = {
+    'content': [
+        {'imageUrl':'http://img.clock.co.uk/300x300?color=0095da&textColor=0095da'}
+      , {'imageUrl':'http://img.clock.co.uk/300x300?color=0095da&textColor=0095da'}
+      , {'imageUrl':'http://img.clock.co.uk/300x300?color=0095da&textColor=0095da'}
+      , {'imageUrl':'http://img.clock.co.uk/300x300?color=0095da&textColor=0095da'}
+      , {'imageUrl':'http://img.clock.co.uk/300x300?color=0095da&textColor=0095da'}
+    ]
+  }
+.example
+  +email-wrapper()
+    include ../../../static-routes/views/components/email-grid
+
+h3 Alignment
+p By default, the grid aligns to the center when it wraps - this can be changed with alignment:
+
+h3 Gutterless
+p By default, the grid has a gutter - this can be turned off with gutterless:

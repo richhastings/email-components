@@ -1,14 +1,10 @@
 include ../../../static-routes/views/mixins/email-wrapper
 
-h2(id='header') Header
-p Usually found above content and below pre-header
+h2 Header
+p Use to contain a full width logo.
 
-h3 Full width logo
 .example
   +email-wrapper()
     include ../../../static-routes/views/components/email-header
 
-h3 Logo center
-.example
-  +email-wrapper()
-    include ../../../static-routes/views/components/email-header
+//- p The header can contain social links:

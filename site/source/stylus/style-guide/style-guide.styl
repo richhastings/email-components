@@ -4,8 +4,12 @@
 //
 
 .style-guide-nav
+  margin ($base--spacing / 2) 0
   background $color--white
   font-family $base--font-heading
+
+  +width-min($mq--tablet)
+    margin $base--spacing 0
 
   a
     display block
@@ -13,20 +17,25 @@
     border-bottom 1px solid $color--grey
 
 .style-guide-section
+  margin ($base--spacing / 2) 0
   padding $base--spacing
   background $color--white
   border-bottom 1px solid $color--grey
 
+  +width-min($mq--tablet)
+    margin $base--spacing 0
+
   +width-min($mq--desktop)
     padding ($base--spacing * 2)
 
-  & + &
-    margin-top rem(20)
-
 .example
   display block
-  margin 0 (-($base--spacing) * 2) $base--spacing
   background $color--grey
+  padding $base--spacing
 
-  +width-min($mq--desktop)
-    margin 0 (-($base--spacing) * 2) ($base--spacing * 2)
+  & + p
+  & + h3
+    margin-top $base--spacing
+
+    +width-min($mq--desktop)
+      margin-top ($base--spacing * 2)
